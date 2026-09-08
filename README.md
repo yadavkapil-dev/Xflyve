@@ -6,6 +6,25 @@ It is not a TMS/ERP replacement. It doesn't do route optimization, GPS tracking,
 
 This is a full-stack portfolio/production-readiness project: real auth, real role-based access control, a real CI/CD pipeline with automated tests, and an audited security pass — built to demonstrate how a small operational tool gets built and hardened end-to-end, not to claim adoption or scale it hasn't been tested at.
 
+## Live demo
+
+- **App (frontend):** https://xflyve.vercel.app
+- **API (backend):** https://xflyve.onrender.com
+- **API docs (Swagger):** https://xflyve.onrender.com/api-docs
+
+### Try It Out
+
+Log in with the demo accounts below to see both portals without registering — one is an admin, one is a driver:
+
+Sign in as the admin to create and assign a job, review PODs, and see the invoicing and activity views; sign in as the driver to start and complete that job and upload paperwork.
+
+| Role | Email | Password |
+|---|---|---|
+| Admin | `admin@example.com` | `admin123` |
+| Driver | `marcus.chen@example.com` | `Interview123!` |
+
+The backend runs on Render's free tier, so it spins down after a period of inactivity. The first request after it's been idle can take up to a minute while the service wakes back up — a slow initial load (or a login that seems to hang the first time) is expected, not a broken deploy. Requests after that are fast.
+
 ## Architecture overview
 
 - **Frontend** — React 19 (Vite), Material UI v7, React Router v7. Talks to the backend over Axios (REST) and Socket.IO (real-time). Deployed to Vercel.
@@ -44,7 +63,7 @@ This is a full-stack portfolio/production-readiness project: real auth, real rol
 **Requirements:** Node.js ≥18, a MongoDB instance (local via Docker, or your own).
 
 ```bash
-git clone (https://github.com/yadavkapil-dev/Xflyve.git)
+git clone https://github.com/yadavkapil-dev/Xflyve.git
 cd Xflyve
 
 # Backend
